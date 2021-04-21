@@ -1,33 +1,20 @@
-# Jungle Devs - Node Challenge #001
+# Jungle Devs - Node Challenge #001 By Gabriel
 
 ## Description
 
-**Challenge goal**: The purpose of this challenge is to give an overall understanding of a backend application. You’ll be implementing a simplified version of news provider API. The concepts that you’re going to apply are:
+**Challenge goal**: The purpose of this challenge is to show my skills using Node Js App with Typescript Language.
 
-- REST architecture;
-- Authentication and permissions;
-- Data modeling and migrations;
-- SQL database;
-- Query optimization;
-- Serialization;
-- Production builds.
+**Target level**: This development was made by a Medium Software Engineer.
 
-**Target level**: This is an all around challenge that cover both juniors and experience devs based on the depth of how the concepts were applied.
+## Routes
 
-**Final accomplishment**: By the end of this challenge you’ll have a production ready API.
-
-## Acceptance criteria
-
-- Clear instructions on how to run the application in development mode
-- Clear instructions on how to create production builds
-- A good API documentation or collection
-- Models created using [Objection.js](https://vincit.github.io/objection.js/)
 - Login API: `/api/login`
 - Sign-up API: `/api/sign-up`
 - Administrator restricted APIs:
   - CRUD `/api/admin/authors`
   - CRUD `/api/admin/articles`
-- List article endpoint `/api/articles?category=:slug` with the following response:
+- List article endpoint `/api/articles?category=:slug`
+
 ```json
 [
   {
@@ -42,40 +29,53 @@
   ...
 ]
 ```
+
 - Article detail endpoint `/api/articles/:id` with different responses for anonymous and logged users:
 
-    **Anonymous**
-    ```json
-    {
-      "author": {
-        "name": "Author Name",
-        "picture": "https://picture.url"
-      },
-      "category": "Category",
-      "title": "Article title",
-      "summary": "This is a summary of the article",
-      "firstParagraph": "<p>This is the first paragraph of this article</p>"
-    }
-    ```
+  **Anonymous**
 
-    **Logged user**
-    ```json
-    {
-      "author": {
-        "name": "Author Name",
-        "picture": "https://picture.url"
-      },
-      "category": "Category",
-      "title": "Article title",
-      "summary": "This is a summary of the article",
-      "firstParagraph": "<p>This is the first paragraph of this article</p>",
-      "body": "<div><p>Second paragraph</p><p>Third paragraph</p></div>"
-    }
-    ```
+  ```json
+  {
+    "author": {
+      "name": "Author Name",
+      "picture": "https://picture.url"
+    },
+    "category": "Category",
+    "title": "Article title",
+    "summary": "This is a summary of the article",
+    "firstParagraph": "<p>This is the first paragraph of this article</p>"
+  }
+  ```
 
+  **Logged user**
+
+  ```json
+  {
+    "author": {
+      "name": "Author Name",
+      "picture": "https://picture.url"
+    },
+    "category": "Category",
+    "title": "Article title",
+    "summary": "This is a summary of the article",
+    "firstParagraph": "<p>This is the first paragraph of this article</p>",
+    "body": "<div><p>Second paragraph</p><p>Third paragraph</p></div>"
+  }
+  ```
 
 ## Instructions to Run
 
-- Database: `docker-compose up` will start the PostgreSQL DB
-- `yarn dev` is configured to start the app.js using nodemon
+- Database: `docker-compose up` will start the PostgreSQL DB, and is necessary to install [Docker](https://docs.docker.com/engine/install/).
+- To run as `production` or `development`, if need to edit a .env in `root` directory(look the env keys correctly).
+- `yarn dev` is configured to start the `index.ts` using ts-node and nodemon in `development mode`.
+- `yarn production` is configured to start the `dist/index.ts` using a node in `production mode`.
 
+## Env Var's
+
+- `KEYCHALLENGE` = The key is used for jsonwebtoken.
+- `NODE_ENV` = The env of App.
+- `DB_HOST` = The host of your database.
+- `DB_USER` = The user of your database.
+- `DB_PASSWORD` = The passord of your database.
+- `DB_NAME` = The name of your database.
+- `DB_PORT` = The port of your database.

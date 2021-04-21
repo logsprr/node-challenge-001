@@ -2,27 +2,37 @@
   "name": "node-challenge-001",
   "version": "1.0.0",
   "description": "Node challenge 001",
-  "repository": "https://github.com/JungleDevs/node-challenge-001",
-  "author": "Vinicius de Morais Justo",
+  "repository": "https://github.com/logsprr/node-challenge-001",
+  "author": "Gabriel Gomes",
   "license": "MIT",
   "private": false,
-  "engineStrict": true,
-  "engines": {
-    "node": "12"
-  },
   "scripts": {
-    "dev": "cross-env NODE_ENV=development nodemon --watch src --exec babel-node src/app.js"
-  },
-  "devDependencies": {
-    "@babel/core": "^7.12.9",
-    "@babel/node": "^7.12.6",
-    "cross-env": "^7.0.3",
-    "nodemon": "^2.0.6"
+    "dev": "nodemon --watch 'src/**/*.ts' --ignore 'src/**/*.spec.ts' --exec 'ts-node' src/index.ts",
+    "production": "yarn tsc && node dist/index.js",
+    "test": "jest"
   },
   "dependencies": {
+    "bcrypt": "^5.0.0",
+    "cors": "^2.8.5",
+    "dotenv": "^8.2.0",
     "express": "^4.17.1",
+    "jsonwebtoken": "^8.5.1",
+    "ts-node": "^7.0.1",
+    "typescript": "^3.0.3",
     "knex": "^0.21.12",
     "objection": "^2.2.3",
     "pg": "^8.5.1"
+  },
+  "devDependencies": {
+    "jest": "^26.6.3",
+    "@types/bcrypt": "^3.0.0",
+    "@types/bluebird": "^3.5.33",
+    "@types/cors": "^2.8.9",
+    "@types/express": "^4.17.9",
+    "@types/jest": "^26.0.19",
+    "@types/jsonwebtoken": "^8.5.0",
+    "@types/node": "^14.14.14",
+    "@types/validator": "^13.1.1",
+    "nodemon": "^2.0.6"
   }
 }
